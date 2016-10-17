@@ -1,5 +1,5 @@
-import sys
-
+#import sys
+import game_functions as gf
 import pygame
 
 from settings import Settings
@@ -21,16 +21,19 @@ def run_game():
     while True:
 
         #
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-
-        #
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
+        #for event in pygame.event.get():
+        #    if event.type == pygame.QUIT:
+        #        sys.exit()
+        gf.check_events(ship)
+        gf.update_screen(ai_settings,screen,ship)
 
 
         #
-        pygame.display.flip()
+        #screen.fill(ai_settings.bg_color)
+        #ship.blitme()
+
+
+        #
+        #pygame.display.flip()
 
 run_game()
